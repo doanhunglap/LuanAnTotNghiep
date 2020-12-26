@@ -295,7 +295,6 @@
     <Content Include="Views\Blog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ABC\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Client\Controllers\" />
     <Folder Include="Areas\Client\Models\" />
@@ -309,7 +308,7 @@
     <Folder Include="Assets\web\css\" />
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
-    <Folder Include="br1\" />
+    <Folder Include="Tuan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
