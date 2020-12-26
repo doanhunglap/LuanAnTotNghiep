@@ -1,0 +1,31 @@
+﻿@model List<QuanLyPhongKham.Areas.Admin.Models.ThuocItem>
+@{var count = 0; }
+@foreach (var item in Model)
+{
+    count++;
+    <div class="form-group">
+        <div class="number" style="position: absolute; left:3%  ">
+            @count
+        </div>
+        <a class="delete" style="position: absolute; right:0; ">
+            Rác
+        </a>
+        <div class="form-thuoc__line" style="margin-left: 7%; position: relative">
+            <div class="form-thuoc__line--group" style="width: 100%;">
+                <input type="text" name="name" value="@item.Thuoc.TenThuoc" placeholder="Nhập tên thuốc" style="width: 60%;" />
+                <span>
+                    <label>Số Lượng:</label>
+                    <input type="text" name="name" value="@item.SoLuong" placeholder="" style="width: 30px" />
+                    <input type="text" name="name" value="" placeholder="viên" style="width: 50px; margin-left: 20px;" />
+                </span>
+            </div>
+        </div>
+        <div class="form-thuoc__line" style="margin-left: 7%">
+            <div class="form-thuoc__line--group x" style="width: 100%;">
+                <label class="form-name">Cách dùng: </label>
+                <input type="text" name="name" value="@item.Thuoc.CachDung" placeholder="" style="width: 60%;" />
+            </div>
+        </div>
+    </div>
+}
+

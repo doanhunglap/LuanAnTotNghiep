@@ -1,0 +1,166 @@
+﻿@model PagedList.IPagedList<Model.EF.BenhNhan>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "BenhNhan";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    }
+<div class="modal" tabindex="-1" id="form-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="padding:15px">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm Mới</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DS Toa Thuốc</h6>
+    </div>
+    <div class="card-body">
+        <div class="panel-body" style="margin-bottom:20px">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-search fa-sm"></i>
+                            </span>
+                        </div>
+                        <input type="text" id="Search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    @Html.DropDownList("NHOM", (IEnumerable<SelectListItem>)ViewBag.NhomBN, "--Tất Cả--",new { @class = "form-control" , @id= "mySelect" })                 
+                </div>
+                <div class="col-md-3">
+                    <a onclick="showInPopup('@Url.Action("Create","BenhNhan")','Thêm Mới')" class="btn btn-primary" style="color:white">Thêm Mới</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="table-responsive" style="background-color:white">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Giới Tính</th>
+                        <th>Tuổi</th>s
+                        <th>Số Điện Thoại</th>
+                        <th>Địa Chỉ</th>
+                        <th>Ngày Lập</th>
+                        <th>Nhóm Bệnh Nhân</th>
+                        <th>Chức Năng</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.MaBN" class="Search">
+
+                            <td>@item.MaBN</td>
+                            <td>@item.TenBN</td>
+                            <td>@item.GioiTinh</td>
+                            <td>@item.Tuoi</td>
+                            <td>@item.SDT</td>
+                            <td>@item.DiaChi</td>
+                            <td>@item.NgayLap</td>
+                            
+                            @if (@item.NhomBN.Trim() == "NBN003")
+                            {
+                                <td>
+                                    @Html.Raw("Đã Khám")
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.Raw("Chờ Khám")
+                                </td>
+                            }
+
+                            <td>
+                                <a onclick="showInPopup('@Url.Action("Edit","BenhNhan",new {id = @item.MaBN })','Chỉnh Sửa')"  class="text-primary"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;
+                                @Ajax.ActionLink(" ", "Delete", new { @id = item.MaBN }, new AjaxOptions
+                                      {
+                                          Confirm = "Bạn có muốn xóa bản ghi này ?",
+                                          OnComplete = "$('#row_" + @item.MaBN + "').remove()",
+                                          HttpMethod = "Delete"
+
+                                      }, new { @class = "fa fa-trash fa-lg" })
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    showInPopup = (url, title) => {
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (res) {
+                $("#form-modal .modal-body").html(res);
+                $("#form-modal .modal-title").html(title);
+                $("#form-modal").modal('show');
+            }
+        })
+    }
+
+
+    $(document).ready(function () {
+        document.getElementById("mySelect").onchange = function () {
+            var searchText = this.options[this.selectedIndex].text.toLowerCase();
+            $(".Search").each(function (index) {     
+                if (!Contains(String($(this).text().toLowerCase()), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+
+        }
+        function Contains(text_one, text_two) {
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if (!Contains(String($(this).text().toLowerCase()), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+
+
+</script>

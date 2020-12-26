@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Tin T?c";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ListBlog = (List<Model.EF.TinTuc>)ViewBag.NewBlog;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Medical Website Template | blog :: W3layouts</title>
+    <link href="~/Assets/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    @*<script src="~/Assets/web/js/jquery.min.js"></script>*@
+    <style>
+        .news__content {
+            float: left;
+            margin-bottom: 1.5%;
+        }
+
+            .news__content a:first-child {
+                display: inline-block;
+                float: left;
+            }
+
+        .news__content--more {
+            float: left;
+        }
+
+            .news__content--more h3 {
+                height: 40px;
+                font: 400 30px/28px 'Roboto';
+            }
+
+                .news__content--more h3 a {
+                    color: #626262;
+                    text-decoration: none;
+                }
+
+            .news__content--more p {
+                text-align: justify;
+            }
+
+            .news__content--more .button span a {
+                background: #a086d3;
+                padding: 8px 20px;
+                color: #fff;
+                font-size: 0.875em;
+            }
+
+                .news__content--more .button span a:hover {
+                    background: #7B7C7E;
+                    text-decoration: none;
+                }
+
+        .news__menu {
+            font-size: 14px;
+            margin: 50px 0px 0px 2%;
+        }
+
+            .news__menu a {
+                margin: 0px 20px 0px 0px;
+                vertical-align: middle;
+            }
+
+        .list-number {
+            height: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .number {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            display: inline-block;
+            background: #a086d3;
+            padding: 0px 15px;
+            color: #fff;
+        }
+
+            .number:hover {
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <!---start-content---->
+    <div class="wrap">
+        <div class="content">
+            <div class="clear"> </div>
+            <div class="blog">
+
+                <div class="project-top-patination">
+                    <ul>
+                        <li><a href="/Home/index">Trang ch?</a></li>
+                        <li><p>Tin t?c</p></li>
+                    </ul>
+                </div>
+                @*C?n S?a*@
+                @foreach (var item in ListBlog)
+                {
+                    <div class="blog-leftgrids">
+                        <div class="news__content col-md-12">
+                            <a class="col-md-4" href="#"><img src="@item.Hinhanh" alt="Error Image"></a>
+                            <div class="news__content--more col-md-8">
+                                <h3><a href="#">@item.TenTinTuc </a></h3>
+                                <p style="font-size: 13px">@item.NoiDung </p>
+                                <div class="button"><span><a href="/tin-tuc/@item.Link">Xem thêm</a></span></div>
+                            </div>
+                        </div>
+                        <div class="news__menu">
+                            <a href="#"><img src="~/Assets/web/images/blog-icon1.png" title="date"><span>@item.NgayDang</span></a>
+                            <a href="#"><img src="~/Assets/web/images/blog-icon2.png" title="Admin"><span>@item.Nguoidang</span></a>
+                            <a href="#"><img src="~/Assets/web/images/blog-icon3.png" title="Comments"><span>No comments</span></a>
+                            <a href="#"><img src="~/Assets/web/images/blog-icon4.png" title="Lables"><span>View posts: @item.Viewposts</span></a>
+                            <a href="#"><img src="~/Assets/web/images/blog-icon5.png" title="permalink"><span>permalink</span></a>
+                        </div>
+                    </div>
+                    <hr />
+
+                }
+
+                <div class="clear"> </div>
+                <div class="blog-bottom-paination list-number">
+                    <a class="number active" href="#">1</a>
+                    <a class="number" href="#">2</a>
+                    <a class="number" href="#">3</a>
+                    <a class="number" href="#">Next</a>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="clear"> </div>
+
+        </div>
+        <!---End-content---->
+    </div>
+    <!---start-wrap--->
+</body>
+</html>

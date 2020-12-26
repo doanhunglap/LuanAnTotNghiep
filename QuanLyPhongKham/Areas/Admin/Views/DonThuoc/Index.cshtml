@@ -1,0 +1,203 @@
+﻿@model List<QuanLyPhongKham.Areas.Admin.Models.ThuocItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Assets/admin/css/DonThuoc.css" rel="stylesheet" type="text/css" />
+<!--Kê toa thuốc-->
+@section header{
+}
+<div class="row">
+    <div class="col-lg-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="menu">
+                    <div class="menu-heading">
+                        Quá trình điều trị
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-heading">
+                        Nhóm Thuốc
+                    </div>
+                    <div id="parent" style="width:100%;height:100%">
+                        @*load đu lieu nhom thuoc*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="menu">
+                    <div class="menu-heading">
+                        Diễn biến bệnh
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-heading">
+                        Danh sách thuốc
+                    </div>
+                    <div id="result" style="display: flex; overflow-y: auto; flex-wrap: wrap">
+                        @*ajax render childmenu thuoc*@
+                        @foreach (var item in ViewBag.NhomThuoc1)
+                        {
+                            <a class="menu-item-2" data-id="@item.MaThuoc" data-sl="@item.SoLuongMacDinh">
+                                @item.TenThuoc
+                            </a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Form don thuoc ke toa*@
+    <div class="col-lg-7">
+        <form class="form-thuoc" action="/" method="post">
+            <label style="display: block; padding: 5px 0px; font-weight: bold; color:green " class="text-center">ĐƠN THUỐC</label>
+            <div class="form-thuoc__line">
+                <div class="form-thuoc__line--group">
+                    <label class="form-name"> Họ tên: </label>
+                    <input type="text" name="name" value="" placeholder="Nhập họ tên" />
+                </div>
+                <div class="form-thuoc__line--group" style="margin-left: 16%;">
+                    <label class="form-name"> Năm sinh: </label>
+                    <input type="text" name="name" value="" style="width: 20%;" placeholder="" />
+                </div>
+            </div>
+            <div class="form-thuoc__line">
+                <div class="form-thuoc__line--group">
+                    <label class="form-name">Mạch: </label>
+                    <input type="text" name="name" value="" placeholder="" style="width: 40px" />
+                    <b>lần/phút</b>
+                </div>
+                <div class="form-thuoc__line--group" style="margin-left: 5%;">
+                    <label class="form-name">Thân nhiệt: </label>
+                    <input type="text" name="name" value="" placeholder="" style="width: 20px" />
+                    <b><sup>o</sup>C</b>
+                </div>
+                <div class="form-thuoc__line--group" style="margin-left: 5%;">
+                    <label class="form-name">Huyết áp: </label>
+                    <input type="text" name="name" value="" placeholder="" style="width: 40px" />
+                    <b>mmHg</b>
+                </div>
+                <div class="form-thuoc__line--group" style="margin-left: 5%;">
+                    <label class="form-name">Cân nặng: </label>
+                    <input type="text" name="name" value="" placeholder="" style="width: 40px" />
+                    <b>Kg</b>
+                </div>
+            </div>
+            <div class="form-thuoc__line">
+                <div class="form-thuoc__line--group" style="width: 100%">
+                    <label class="form-name">Chuẩn đoán: </label>
+                    <input type="text" name="name" value="" placeholder="" style="width: 54%" />
+                </div>
+            </div>
+            <div class="form-thuoc__line" style="margin: 20px 0px 20px 10px;">
+                <div class="form-thuoc__line--group">
+                    <button>1 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>2 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>3 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>4 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>5 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>6 Ngày</button>
+                </div>
+                <div class="form-thuoc__line--group">
+                    <button>n Ngày</button>
+                </div>
+            </div>
+
+            @*form hiển thị thuốc*@
+            <div class="list-group-item-thuoc" id="mainResult">    
+                @*hien thi danh sach thuoc ke toa*@
+            </div>
+
+            <hr style="width: 95%" />
+            <div class="form-bottom">
+                <div class="more">
+                    <div>Lời dặn:</div>
+                    <input type="text" name="name" value="" placeholder="" style="width: 80%" class="loidan" />
+                    <input type="text" name="name" value="" placeholder="" style="width: 80%" class="loidan" />
+                    <input type="text" name="name" value="" placeholder="" style="width: 80%" class="loidan" />
+                </div>
+                <div class="name">
+                    <input type="text" name="name" value="" style="text-align: center" />
+                    <h6 style="font-weight: bold; padding: 5px 0px; text-align: center">BÁC SĨ</h6>
+                    <p style="font-weight: bold; padding-top: 30px;">phongkhamTHLL</p>
+                </div>
+            </div>
+        </form>
+        <div class="bottom">
+            <div class="bottom-1" style="height: 60px">
+                <div class="bottom-1-1">
+                    <span>Ngày tái khám: </span>
+                    <input type="date" name="name" value="" />
+                </div>
+                <div class="bottom-1-2">
+                    <span>Ngày tái khám: </span>
+                    <input type="date" name="name" value="" />
+                </div>
+            </div>
+            <div class="bottom-2" style="display: inline-block; margin: 20px 0px">
+                <button>LƯU</button>
+                <button>LƯU VÀ IN</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+@*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            //load menu nhom thuoc
+            $.ajax({
+                url: 'Admin/DonThuoc/ParentMenu',
+                type: 'post',
+                dataType: 'html',
+                success: function (result) {
+                    $('#parent').html(result);
+                }
+            }).error(function (xhr, status) {
+                alert(status);
+            });
+
+            //load danh sach thuoc ke toa
+            $('.menu-item-2').off('click').on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var sl = $(this).data('sl');
+                $.ajax({
+                    data: { maThuoc: id, soLuong: sl },
+                    url: 'Admin/DonThuoc/MainMenuThuoc',
+                    dataType: 'html',
+                    type: 'POST',
+                    success: function (response) {
+                        $('#mainResult').html(response);
+                    }
+                })
+            });
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+

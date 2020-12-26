@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Carousel-->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Assets/client/Images/slide1.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Chào Mừng Đến Với Phòng Khám Chúng Tôi</h1>
+                    <button type="button" class="btn btn-outline-light btn-lg">
+                        XEM HƯỚNG DẪN
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg">THAM QUAN</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Assets/client/Images/slide2.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Assets/client/Images/slide3.jpg">
+            </div>
+        </div>
+    </div>
+    <!--jumbotron-->
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+                <p>ĐỂ LẠI THÔNG TIN CỦA BẠN ĐỂ ĐƯỢC HỖ TRỢ TƯ VẤN MIỄN PHÍ</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+                <a href="#">
+                    <button type="button" class="btn btn-outline-secondary">NHẬP THÔNG TIN TẠI ĐÂY</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4" style="color:#162755">PHỤC VỤ TẬN TÌNH 24/7</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-bed"></i>
+                    <h4>DỊCH VỤ CAO CẤP</h4>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link ">
+                    <i class="fa fa-stethoscope"></i>
+                    <h4>HỒ SƠ BỆNH ÁN</h4>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link ">
+                    <i class="fa fa-user-md"></i>
+                    <h4>BÁC SĨ CHUYÊN KHOA</h4>
+                </a>
+            </div>
+        </div>
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link ">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>ĐẶT LỊCH KHÁM BỆNH</h4>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link ">
+                    <i class="fa fa-heartbeat"></i>
+                    <h4>KHÁM SỨC KHỎE ĐỊNH KÌ</h4>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="nav-link ">
+                    <i class="fa fa-users"></i>
+                    <h4>TUYỂN DỤNG</h4>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+    <div class="container-fluid padding margin-bottom">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h3 class="display-4" style="color:#162755">ĐỘI NGŨ CHÚNG TÔI</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Assets/client/Images/long.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Vũ Huỳnh Ngọc Long</h4>
+                        <p class="card-text">Vũ Huỳnh Ngọc Long là chuyên gia tư vấn sinh lí với 5 năm kinh nghiệm</p>
+                        <a href="#" class="btn btn-outline-secondary">Xem Thông Tin</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Assets/client/Images/hoang.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Ngô Khải Hoàng
+                        </h4>
+                        <p class="card-text">Ngô Khải Hoàng chuyên gia phẫu thuật vùng kín với 4 năm kinh nghiệm</p>
+                        <a href="#" class="btn btn-outline-secondary">Xem Thông Tin</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Assets/client/Images/tuan.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Trần Minh Tuấn
+                        </h4>
+                        <p class="card-text">Trần Minh Tuấn là lao công với hơn 20 kinh nghiệm</p>
+                        <a href="#" class="btn btn-outline-secondary">Xem Thông Tin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padding " style="margin-top:50px;">
+        <div class="row padding ">
+            <div class="col-md-12 col-lg-6">
+                <h2 style="color:#162755">Our vision</h2>
+                <p>All our work is for customer satisfaction with high quality products</p>
+                <p>We make outsourcing all softwares relating to CMS, Database, Education</p>
+                <br>
+            </div>
+            <div class="col-lg-6">
+                <img src="~/Assets/client/Images/long.jpg" class="img-fl">
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+

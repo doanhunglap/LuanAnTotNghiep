@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Khám Đa Khoa</title>
+    <link type="text/css" href="~/Assets/client/CSS/trangchu.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    
+</head>
+<body>
+    <!-- Navigation  #365098 -->
+    <nav class="navbar navbar-expand-md navbar-light  sticky-top">
+        <div class="container-fluid">
+            <!--chiếm toàn bộ chiều ngang-->
+            <a class="narbar-branch" href="#">
+                <!--show logo-->
+                <img src="~/Assets/client/Images/logo.png" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @{Html.RenderAction("MainMenu", "Home"); }
+        </div>
+    </nav>
+    
+    @RenderBody()
+    
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2 style="color:#162755">SOCIAL NETWORK</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="~/Assets/client/Images/logo.png" style="height: 100px; width:100px;margin-top:20px;">
+                    <hr class="light">
+                    <p>PhoneNumber : 0931905071</p>
+                    <p>meomeo@gmail.com</p>
+                    <p>Address : đà nẽng</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Thời Gian Làm Việc</h5>
+                    <hr class="light">
+                    <p>Thứ hai - Thứ bảy: 8am - 5pm</p>
+                    <p>Chủ nhật: 8am - 12am</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Hỗ trợ</h5>
+                    <hr class="light">
+                    <p>Câu hỏi thường gặp</p>
+                    <p>Hướng dẫn thanh toán</p>
+                    <p>Góc chia sẽ</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5 style="color:rgb(37, 7, 7);font-size:120%;">Để phản ánh về chất lượng dịch vụ, vui lòng liên hệ đường dây nóng: 0931905071</h5>
+                </div>
+            </div>
+        </div>
+        @*@{Html.RenderAction("Footer", "Home"); }*@
+    </footer>
+</body>
+</html>

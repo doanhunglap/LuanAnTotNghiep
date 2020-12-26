@@ -1,0 +1,31 @@
+﻿@model List<Model.EF.Menu>
+
+
+
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        @foreach (var item in Model)
+        {
+            <li class="nav-item">
+                <a class="nav-link active" target="@item.Target" href="@item.Link">@item.Text</a>
+            </li>
+        }
+        
+        @*<li class="nav-item">
+            <a class="nav-link active" href="#">TRANG CHỦ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">LIÊN HỆ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">DỊCH VỤ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">ĐỘI NGŨ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="login.html">ĐĂNG NHẬP</a>
+        </li>*@
+    </ul>
+</div>
