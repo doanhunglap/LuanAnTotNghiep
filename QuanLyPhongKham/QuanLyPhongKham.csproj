@@ -310,6 +310,7 @@
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
     <Folder Include="br1\" />
+    <Folder Include="doanhunglap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
