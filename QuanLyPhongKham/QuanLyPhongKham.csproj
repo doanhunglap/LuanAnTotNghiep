@@ -308,6 +308,7 @@
     <Folder Include="Assets\web\css\" />
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
+    <Folder Include="TMT\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
