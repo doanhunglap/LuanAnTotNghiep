@@ -225,7 +225,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testthoi\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\css\DonThuoc.css" />
