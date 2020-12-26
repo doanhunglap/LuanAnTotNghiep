@@ -309,6 +309,7 @@
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
     <Folder Include="lap\" />
+    <Folder Include="minhtuan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
