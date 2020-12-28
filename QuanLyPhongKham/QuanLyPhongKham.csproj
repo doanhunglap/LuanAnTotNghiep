@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -230,6 +231,7 @@
     <Content Include="Assets\admin\css\DonThuoc.css" />
     <Content Include="Assets\admin\css\TrangChu.css" />
     <Content Include="Assets\admin\js\Controller\userController.js" />
+    <Content Include="Assets\web\css\login.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
@@ -305,7 +307,6 @@
     <Folder Include="Assets\client\CSS\" />
     <Folder Include="Assets\client\Images\" />
     <Folder Include="Assets\client\JS\" />
-    <Folder Include="Assets\web\css\" />
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
   </ItemGroup>
