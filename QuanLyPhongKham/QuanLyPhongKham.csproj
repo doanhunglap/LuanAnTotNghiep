@@ -309,6 +309,7 @@
     <Folder Include="Assets\client\JS\" />
     <Folder Include="Assets\web\images\" />
     <Folder Include="Assets\web\js\" />
+    <Folder Include="FileofLong\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
