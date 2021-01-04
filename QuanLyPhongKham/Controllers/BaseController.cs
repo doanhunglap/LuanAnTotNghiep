@@ -10,7 +10,7 @@ namespace QuanLyPhongKham.Controllers
 {
     public class BaseController : Controller
     {
-        // GET: Admin/Base
+        // GET: Admin/Basee
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var session = (UserLogin)Session[CommonConstants.USER_SESSION];
