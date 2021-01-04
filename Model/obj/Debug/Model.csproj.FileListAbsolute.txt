@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\Model.dll.config
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\Model.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\Model.pdb
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\EntityFramework.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\PagedList.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\EntityFramework.xml
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\PagedList.xml
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\obj\Debug\Model.dll
+C:\Users\Dell\Desktop\LuanAnTotNghiep\LuanAnTotNghiep-e6889c0812a4d5d8e81b7fc694b2b530f746e6b2\Model\obj\Debug\Model.pdb
