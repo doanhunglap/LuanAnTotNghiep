@@ -1,0 +1,30 @@
+﻿@model List<Model.EF.Thuoc>
+
+@foreach (var item in Model)
+{
+    <a class="menu-item-2" data-id="@item.MaThuoc" data-sl="@item.SoLuongMacDinh">
+        @item.TenThuoc
+    </a>
+}
+
+<script>
+    $(document).ready(function () {
+        $('.menu-item-2').off('click').on('click', function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            var sl = $(this).data('sl');
+            $.ajax({
+                data: { maThuoc: id, soLuong: sl },
+                url: 'Admin/DonThuoc/MainMenuThuoc',
+                dataType: 'html',
+                type: 'POST',
+                success: function (response) {
+                    $('#mainResult').html(response);
+                }
+            })
+        });
+    });
+    
+</script>
+
+    

@@ -1,0 +1,31 @@
+﻿@model List<Model.EF.NhomThuoc>
+
+
+@foreach (var item in Model)
+{
+    <a class="menu-item" data-id="@item.MaNhomThuoc">
+        @item.TenNhomThuoc
+    </a>
+}
+
+<script>
+  
+        //load childmenu
+        $('.menu-item').off('click').on("click", function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            $.ajax({
+                type: "post",
+                datatype: 'json',
+                url: 'Admin/DonThuoc/ChildMenu',
+                data: { id: id },
+                success: function (response) {
+                    $("#result").html(response);
+                }
+            }).error(function (xhr, status) {
+                alert(status);
+            });
+        });
+
+    
+</script>

@@ -1,0 +1,13 @@
+﻿@model Model.EF.Account
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post,new { @style = "overflow-y: auto" }))
+{
+    <h1 style="padding-top:30%;padding-bottom:20px;">Create Account</h1>
+
+    @Html.EditorFor(model => model.UserName, new { @type = "text", @placeholder = "Tài Khoản"})
+
+    @Html.EditorFor(model => model.Password, new { @type = "text", @placeholder = "Mật Khẩu"})
+
+    <button style="margin: 20px 0px" type="submit" >Sign Up</button>
+}
+

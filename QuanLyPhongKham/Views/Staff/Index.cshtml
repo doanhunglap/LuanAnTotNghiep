@@ -1,0 +1,48 @@
+﻿@model List<Model.EF.NhanVien>
+@{
+
+    ViewBag.Title = "Đội Ngũ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--web-->
+<link href="Assets/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="Assets/web/js/jquery.min.js"></script>
+<!---start-content---->
+<div class="wrap">
+    <div class="content">
+        <div class="clear"> </div>
+        <div class="our-staff">
+
+            <div class="project-top-patination">
+                <ul>
+                    <li><a href="~/Home/Index">Trang chủ</a></li>
+                    <li><p>Đội ngũ</p></li>
+                </ul>
+            </div><br />
+            <div class="dc-grids">
+                @foreach (var item in Model)
+                {
+                    <div class="dc-head">
+                        <div class="dc-head-img" >
+                            <a href="#"><img src="@item.HinhAnh" title="dc-name" /></a>
+                        </div>
+                        <div class="dc-head-info">
+                            <h3>@item.HoTen</h3>
+                            <span>@item.ChuyenKhoa</span>
+                        </div>
+                        <div class="clear"> </div>
+                        <div class="dc-profile">
+                            <p>@item.GhiChu</p>
+                            <a href="/doi-ngu/@item.Link" >Xem chi tiết</a>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="clear"> </div>
+        <br /><br />
+    </div>
+    <!---End-content---->
+</div>
+<br /><br />

@@ -1,0 +1,12 @@
+﻿
+
+@foreach (var item in ViewBag.menuUser)
+{
+    <li class="nav-item">
+        <a class="nav-link" href="@item.Link" >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>@item.Text</span>
+        </a>
+    </li>
+}
+

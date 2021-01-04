@@ -1,0 +1,94 @@
+﻿@model QuanLyPhongKham.Models.LoginModel
+
+<link href="~/Assets/web/css/login.css" rel="stylesheet" />
+
+
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        @foreach (var item in ViewBag.menuList)
+        {
+            <li class="nav-item">
+                <a class="nav-link active" target="@item.Target" href="@item.Link">@item.Text</a>
+            </li>
+        }
+        
+        <li class="nav-item form-dn">
+            <a class="nav-link active" target="" href="" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập</a>
+        </li>
+        
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">           
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="container" id="container">
+                        <div class="form-container sign-up-container" id="register">
+                            @*load form register*@
+                        </div>
+                        <div class="form-container sign-in-container">
+
+                            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                            {
+                                <form action="#">
+                                    <h1 style="padding-bottom:30px">Sign in</h1>
+                                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        
+                                    @Html.TextBoxFor(model => model.UserName, new { @class = "input", @autofocus = "autofocus" })
+
+                                    @Html.PasswordFor(model => model.Password, new { @class = "input" })
+                                    
+                                    <button type="submit">Sign In</button>
+                                </form>
+                            }
+
+                        </div>
+                        <div class="overlay-container">
+                            <div class="overlay">
+                                <div class="overlay-panel overlay-left">
+                                    <h1>Welcome</h1>
+                                    <p>Nhấn vào SIGN IN để Đăng Nhập Tài Khoản</p>
+                                    <button class="ghost" id="signIn">Sign In</button>
+                                </div>
+                                <div class="overlay-panel overlay-right">
+                                    <h1>Welcome</h1>
+                                    <p>Nhấn vào SIGN UP để Đăng Ký Tài Khoản</p>
+                                    <button class="ghost" id="signUp">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {        
+        $.ajax({
+            url: 'Home/Register',
+            type: 'get',
+            dataType: 'html',
+            success: function (result) {
+                $('#register').html(result);
+            }
+        }).error(function (xhr, status) {
+            alert(status);
+        });     
+    });
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add('right-panel-active');
+    });
+
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove('right-panel-active');
+    });
+
+</script>
+

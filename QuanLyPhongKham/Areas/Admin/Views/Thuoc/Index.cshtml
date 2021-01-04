@@ -1,0 +1,127 @@
+﻿@*@model IEnumerable<Model.EF.Thuoc>*@
+@model PagedList.IPagedList<Model.EF.Thuoc>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Thuoc";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DS Toa Thuốc</h6>
+    </div>
+    <div class="card-body">
+        <div class="panel-body" style="margin-bottom:20px">       
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-search fa-sm"></i>
+                            </span>
+                        </div>
+                        <input type="text" id="Search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        
+                    </div>
+                </div>
+                <div class="col-md-5">
+
+                </div>
+                <div class="col-md-3">  
+                        @*@Html.ActionLink("Thêm Mới Thuốc", "Create", "Thuoc", new {@class="btn btn-secondary"})*@
+                    <a onclick="showInPopup('@Url.Action("Create","Thuoc")','Thêm Mới')" class="btn btn-primary" style="color:white">Thêm Mới</a>                     
+                </div>
+            </div>
+        </div>
+       
+       
+        <div class="table-responsive" style="background-color:white">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Mã Thuốc</th>
+                                <th>Tên Thuốc</th>
+                                <th>Cách Dùng</th>
+                                <th>Đơn Vị Tính</th>
+                                <th>Đơn Giá</th>
+                                <th>Tồn Kho</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row_@item.MaThuoc" class="Search">
+
+                                    <td >@item.MaThuoc</td>
+                                    <td >@item.TenThuoc</td>
+                                    <td >@item.CachDung</td>
+                                    <td >@item.DonViTinh</td>
+                                    <td >@item.DonGia</td>
+                                    <td >@item.SoLuongMacDinh</td>
+                                    <td>
+                                        <a onclick="showInPopup('@Url.Action("Edit","Thuoc",new {id = @item.MaThuoc })','Chỉnh Sửa')" @*href="/Admin/Thuoc/Edit/@item.MaThuoc"*@ class="text-primary"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;                                   
+                                           @Ajax.ActionLink(" ", "Delete", new { @id = item.MaThuoc }, new AjaxOptions
+                                      {
+                                          Confirm = "Bạn có muốn xóa bản ghi này ?",
+                                          OnComplete = "$('#row_" + @item.MaThuoc + "').remove()",
+                                          HttpMethod = "Delete"
+
+                                      }, new { @class = "fa fa-trash fa-lg" })
+                                      
+                                    </td>
+
+                                </tr>
+                            }
+                                     
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                  
+         </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script>
+    showInPopup = (url, title) => {
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (res) {
+                $("#form-modal .modal-body").html(res);
+                $("#form-modal .modal-title").html(title);
+                $("#form-modal").modal('show');
+            }
+        })
+    }
+
+
+    $(document).ready(function () {
+        
+
+        function Contains(text_one, text_two) {
+
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function (index) {
+                console.log($(this).text());
+                if (!Contains(String($(this).text().toLowerCase()), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+   
+
+</script>

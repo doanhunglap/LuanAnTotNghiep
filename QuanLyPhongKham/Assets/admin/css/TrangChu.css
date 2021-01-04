@@ -1,0 +1,50 @@
+﻿
+    :root {
+        --background-button: rgb(78, 115, 223, 0.8);
+        --color-text: white;
+        --height-button: 7rem;
+    }
+
+    .button__item {
+        border: 1px solid;
+        border-radius: 75px;
+        max-height: var(--height-button);
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+        background-color: var(--background-button);
+        margin-bottom: 12px;
+    }
+
+    .button__item--icon {
+        height: calc(var(--height-button) / 2);
+        line-height: calc(var(--height-button) / 2);
+    }
+
+    .button__item--text {
+        font-size: 26px;
+        color: var(--color-text);
+        text-transform: capitalize;
+        font-style: italic;
+        font-weight: bold;
+        height: calc(var(--height-button) / 2);
+        line-height: calc(var(--height-button) / 2);
+    }
+
+    svg, .pills {
+        width: 3em;
+        height: 3em;
+    }
+
+    .image {
+        text-align: center;
+        display: block;
+        width: 60%;
+        margin: 0 auto 20px;
+        height: var(--height-button);
+        border: solid;
+    }
+
+        .image label {
+            font-size: 20px;
+        }
